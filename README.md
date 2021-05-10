@@ -1,2 +1,0 @@
-# TLC
-Controlador semafórico
