@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author Cláudio Silva (claudioccdsilva@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2021-05-15
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+
 #include <Arduino.h>
 #include <FreeRTOS.h>
 #include "stl_structs.hpp"

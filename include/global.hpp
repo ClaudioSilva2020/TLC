@@ -17,6 +17,14 @@
 
     #include <Arduino.h>
 
+    #define VERDE_S1    3
+    #define AMARELO_S1  2
+    #define VERMELHO_S1 1
+
+    #define VERDE_S2    6
+    #define AMARELO_S2  4
+    #define VERMELHO_S2 5
+
     /**
      * @brief Versão de Firmware da placa.
      * 
