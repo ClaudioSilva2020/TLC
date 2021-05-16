@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=VDPED Pin=CON202-1
+Removed Pin From Net: NetName=AC_N Pin=CON202-3
+Added Pin To Net: NetName=AC_N Pin=CON202-1
+Added Pin To Net: NetName=VDPED Pin=CON202-3

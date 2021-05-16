@@ -1,0 +1,65 @@
+Altium Designer Pick and Place Locations
+C:\Users\claud\OneDrive\Documents\UniFanor\2021.1\TCC\TLC-Board\out\Pick Place\Pick Place for STL.txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       09/05/21
+Time:       10:51
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+Designator Comment           Layer    Footprint              Center-X(mil) Center-Y(mil) Rotation Description                                                      
+U100       "MÓDULO ESP32"    TopLayer ESP32_MOD              945.669       658.661       360      ""                                                               
+R302       2K2               TopLayer CR2012-0805            3130.000      380.000       360      "RES SMD 2.2K OHM 5% 1/8W 0805"                                  
+R301       1K                TopLayer CR2012-0805            3150.000      -65.000       360      "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R300       220R              TopLayer CR2012-0805            3665.000      620.000       270      "RES SMD 220 OHM 5% 1/8W 0805"                                   
+Q300       4N25              TopLayer 6-SMD                  3012.008      140.000       180      "OPTOISO 4.17KV TRANS W/BASE 6SMD"                               
+PR300      LDR               TopLayer LDR_3x0.5              3485.000      635.000       90       "THROUGH HOLE PHOTORESISTORS ROHS"                               
+R220       10K               TopLayer CR2012-0805            3090.000      690.000       270      "RES 0805 10K Ohm 0.1% 1/10W  SMD"                               
+R219       33K               TopLayer CR2012-0805            2910.000      1085.000      360      "RES SMD 33K OHM 5% 1/8W 0805"                                   
+Q200       4N25              TopLayer 6-SMD                  2850.000      792.008       270      "OPTOISO 4.17KV TRANS W/BASE 6SMD"                               
+CON101     "TERM BLOCK 4POS" TopLayer MSTBA_4G               2320.000      275.000       360      "TERM BLOCK HDR 4POS R/A 5.08MM"                                 
+CON100     "TERM BLOCK 2POS" TopLayer MSTBA_2G               155.000       2585.000      180      "TERM BLOCK HDR 2POS R/A 5.08MM"                                 
+C200       "100nF 500V"      TopLayer CAPC3225-1210N         2150.000      930.000       270      "CAP CER 0.1UF 500V X7R 1210"                                    
+T208       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 880.886       2197.894      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+T207       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 415.886       2197.894      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+T206       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 2100.000      1131.704      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+T205       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 3545.000      1385.000      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+T204       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 3209.124      2197.894      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+T203       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 2742.559      2197.894      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+T202       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 2277.559      2197.894      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+T201       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 1810.098      2197.894      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+T200       BTA12-600BRG      TopLayer TO255P460X1020X2005-3P 1345.886      2197.894      360      "Thyristor TRIAC 600V 126A 3-Pin(3+Tab) TO-220AB Insulated Tube" 
+R218       180R              TopLayer CR2012-0805            780.492       2022.894      90       "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R217       180R              TopLayer CR2012-0805            315.492       2017.894      90       "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R216       1K                TopLayer CR2012-0805            815.492       1582.894      90       "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R215       1K                TopLayer CR2012-0805            350.492       1582.894      90       "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R214       2K2               TopLayer CR2012-0805            2020.000      915.000       90       "RES SMD 2.2K OHM 5% 1/8W 0805"                                  
+R213       180R              TopLayer CR2012-0805            2300.000      915.000       270      "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R212       180R              TopLayer CR2012-0805            3363.336      1209.134      90       "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R211       180R              TopLayer CR2012-0805            3108.730      2021.162      90       "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R210       180R              TopLayer CR2012-0805            2642.166      2017.894      90       "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R209       180R              TopLayer CR2012-0805            2177.166      2017.894      90       "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R208       180R              TopLayer CR2012-0805            1709.704      2022.894      90       "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R207       180R              TopLayer CR2012-0805            1245.492      2017.894      90       "RES 180 OHM 1/8W 5% 0805 SMD"                                   
+R206       1K                TopLayer CR2012-0805            2255.492      596.732       360      "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R205       1K                TopLayer CR2012-0805            3300.000      850.866       270      "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R204       1K                TopLayer CR2012-0805            3150.000      1582.894      90       "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R203       1K                TopLayer CR2012-0805            2682.056      1584.626      90       "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R202       1K                TopLayer CR2012-0805            2215.492      1582.894      90       "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R201       1K                TopLayer CR2012-0805            1750.492      1582.894      90       "RES SMD 1K OHM 1% 1/8W 0805"                                    
+R200       1K                TopLayer CR2012-0805            1280.492      1582.894      90       "RES SMD 1K OHM 1% 1/8W 0805"                                    
+OK208      MOC3021SM         TopLayer SOP254P1016X450-6N     1030.492      1803.760      90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+OK207      MOC3021SM         TopLayer SOP254P1016X450-6N     563.828       1802.028      90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+OK206      MOC3021SM         TopLayer SOP254P1016X450-6N     2513.336      775.866       90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+OK205      MOC3021SM         TopLayer SOP254P1016X450-6N     3585.000      990.000       90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+OK204      MOC3021SM         TopLayer SOP254P1016X450-6N     3363.336      1802.028      90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+OK203      MOC3021SM         TopLayer SOP254P1016X450-6N     2895.394      1798.760      90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+OK202      MOC3021SM         TopLayer SOP254P1016X450-6N     2428.828      1802.028      90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+OK201      MOC3021SM         TopLayer SOP254P1016X450-6N     1963.828      1803.760      90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+OK200      MOC3021SM         TopLayer SOP254P1016X450-6N     1493.828      1802.028      90       "OPTOCOUPLERS SMD-6 ROHS"                                        
+CON202     "TERM BLOCK 4POS" TopLayer MSTBA_4G               935.492       2572.894      180      "TERM BLOCK HDR 4POS R/A 5.08MM"                                 
+CON201     "TERM BLOCK 4POS" TopLayer MSTBA_4G               2875.000      2570.000      180      "TERM BLOCK HDR 4POS R/A 5.08MM"                                 
+CON200     "TERM BLOCK 4POS" TopLayer MSTBA_4G               1900.492      2572.894      180      "TERM BLOCK HDR 4POS R/A 5.08MM"                                 

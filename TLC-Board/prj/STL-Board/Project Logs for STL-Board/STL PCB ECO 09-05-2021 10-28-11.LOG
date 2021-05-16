@@ -1,0 +1,18 @@
+Added Component: Designator=U100(ESP32 MOD)
+Added Pin To Net: NetName=VCC3V3 Pin=U100-1
+Added Pin To Net: NetName=GND Pin=U100-2
+Added Pin To Net: NetName=GND Pin=U100-3
+Added Pin To Net: NetName=VCC Pin=U100-4
+Added Pin To Net: NetName=FOC8 Pin=U100-5
+Added Pin To Net: NetName=FOC7 Pin=U100-8
+Added Pin To Net: NetName=Z_CROSS Pin=U100-9
+Added Pin To Net: NetName=FOC6 Pin=U100-10
+Added Pin To Net: NetName=FOC5 Pin=U100-11
+Added Pin To Net: NetName=FOC4 Pin=U100-12
+Added Pin To Net: NetName=FOC3 Pin=U100-13
+Added Pin To Net: NetName=DIMMER1 Pin=U100-15
+Added Pin To Net: NetName=FOC2 Pin=U100-16
+Added Pin To Net: NetName=FOC1 Pin=U100-17
+Added Pin To Net: NetName=LIGTH_SENS Pin=U100-21
+Added Pin To Net: NetName=PD_SENS Pin=U100-22
+Added Member To Class: ClassName=Processamento Member=Component U100 MÓDULO ESP32
