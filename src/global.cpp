@@ -249,9 +249,9 @@ void run_semafore_p(void *pvParameters)
                 Serial.println("Detectou pedestre");
                 vTaskDelay(10000/portTICK_PERIOD_MS);
 
-                vTaskSuspend(semHandleA);
-                vTaskSuspend(semHandleB);
-                Serial.println("Seuspendeu tasks");
+                vTaskDelete(semHandleA);
+                vTaskDelete(semHandleB);
+                Serial.println("Deletou tasks");
 
                 apaga_gfocal_a();
                 apaga_gfocal_b();
@@ -268,17 +268,17 @@ void run_semafore_p(void *pvParameters)
                 for (size_t i = 0; i < 20; i++)
                 {
                     digitalWrite(SEMAFOROP_VM, HIGH);
-                    Serial.print("VERMELHO PH:");
+                    Serial.println("VERMELHO PH:");
                     vTaskDelay(500/portTICK_PERIOD_MS);
                     digitalWrite(SEMAFOROP_VD, HIGH);
-                    Serial.print("VERMELHO PL:");
+                    Serial.println("VERMELHO PL:");
                     vTaskDelay(500/portTICK_PERIOD_MS);
                 }
                 apaga_gfocal_a();
                 apaga_gfocal_b();
                 digitalWrite(SEMAFOROP_VM, HIGH);
-                vTaskResume(semHandleA);
-                vTaskResume(semHandleB);
+                xTaskCreate(run_semafore_a, "run_semafore_a", 4024*5, (void *) &semafores[0],  12, &semHandleA);
+                xTaskCreate(run_semafore_b, "run_semafore_b", 4024*5, (void *) &semafores[1],  12, &semHandleB);
                 }else
                 {
                 digitalWrite(SEMAFOROP_VM, HIGH);
@@ -401,7 +401,7 @@ void spiffs_tlc_service(void)
         if (am_gfocalblinkb == "on")
         {
         am_gfocalblinkb = 1;
-        semafores[1].yellow_blink = am_gfocalblinka.toInt();
+        semafores[1].yellow_blink = am_gfocalblinkb.toInt();
         }
         
         
@@ -441,7 +441,7 @@ void spiffs_tlc_service(void)
         
         xTaskCreate(run_semafore_a, "run_semafore_a", 4024*5, (void *) &semafores[0],  12, &semHandleA); 
         xTaskCreate(run_semafore_b, "run_semafore_b", 4024*5, (void *) &semafores[1],  12, &semHandleB);
-        xTaskCreate(run_semafore_p, "run_semafore_p", 4024*5, (void *) &semafores,  12, &semHandleP);
+        xTaskCreate(run_semafore_p, "run_semafore_p", 4024*5, (void *) &semafores[2],  12, &semHandleP);
 
         if (count == sizeof(count))
         {
