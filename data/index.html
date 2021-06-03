@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>TLC-Prog</title> 
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="data:,"> 
+        <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body style="text-align: center;"> 
+		<h1>Controlador Semafórico</h1> 
+        <h2>Programação de Planos semafóricos</h2>
+  	    <div id="sem">
+	  	    <form  action="/get" method="GET">
+                <div id="sem1">
+                    <fieldset>
+                        <legend style="text-align: center;" id="seq">Grupo focal A</legend>
+                        <label class="label" for="ftimeGreen">Tempo do Verde em(s):</label><br>
+                        <input type="text" id="txtimegreen" name="tgreen1" value=""><br>
+                        <label class="label" for="ftimeRed">Tempo do Vermelho em(s):</label><br>
+                        <input type="text" id="txtimered" name="tred1" value=""><br>
+                        <label class="label" for="ftimeyellow">Tempo do Amarelo em(s):</label><br>
+                        <input type="text" id="txtimeyellow" name="tyellow1" value=""><br>
+                        <input type="checkbox", name="blinkYA", id="blinkY", value="on">
+                        <label for="blinlY", class="label">Amarelo piscante</label>
+                    </fieldset>
+                
+                    <br>
+                    <fieldset>
+                        <legend style="text-align: center;" id="seq">Grupo focal B</legend>
+                        <label class="label" for="ftimeGreen">Tempo do Verde em(s):</label><br>
+                        <input type="text" id="txtimegreen" name="tgreen2" value=""><br>
+                        <label class="label" for="ftimeRed">Tempo do Vermelho em(s):</label><br>
+                        <input type="text" id="txtimered" name="tred2" value=""><br>
+                        <label class="label" for="ftimeyellow">Tempo do Amarelo em(s):</label><br>
+                        <input type="text" id="txtimeyellow" name="tyellow2" value=""><br>
+                        <input type="checkbox", name="blinkYB", id="blinkY", value="on">
+                        <label for="blinlY", class="label">Amarelo piscante</label>
+                    </fieldset> 
+
+                    <br>
+                    <fieldset>
+                        <legend style="text-align: center;" id="seq">Grupo focal de pedestres</legend>
+                        <label class="label" for="ftimeGreen">Tempo do Verde em(s):</label><br>
+                        <input type="text" id="txtimegreen" name="tgreen3" value=""><br>
+                    </fieldset>
+                    <br>
+                </div> 
+                
+                <input id="subBt" type="submit" formmethod="GET" value="Enviar">
+	  	    </form>
+          </div>
+  	</body>
+  </html>

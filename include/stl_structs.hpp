@@ -15,8 +15,8 @@
 
     #include <Arduino.h>
 
-    #define ZERO_C 2
-    #define HARDWARE_SIZE_TSK 1000
+
+    
 
 
 
@@ -27,10 +27,7 @@
         VERMELHO = 2,
     } fase_semaforica;
 
-    typedef struct stl_structs
-    {
-        /* data */
-    } Semafore;
+
     
     
 

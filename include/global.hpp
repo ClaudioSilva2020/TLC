@@ -16,22 +16,81 @@
     #define _GLOBALS_HPP_
 
     #include <Arduino.h>
+    #include "WiFi.h"
+    #include "ESPAsyncWebServer.h"
+    #include "SPIFFS.h"
+    #include <string.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <cstdlib>
+    #include <string>
 
-    #define VERDE_S1    3
-    #define AMARELO_S1  2
-    #define VERMELHO_S1 1
 
-    #define VERDE_S2    6
-    #define AMARELO_S2  4
-    #define VERMELHO_S2 5
+    #define ZC_DETECT 16
+    #define HARDWARE_SIZE_TSK 4024
 
+    /**
+     * @brief Definições das pinagens do semáforo A
+     * Semáforo comum.
+     */
+    #define SEMAFOROA_VD 14
+    #define SEMAFOROA_AM 27
+    #define SEMAFOROA_VM 33
+
+    /**
+     * @brief Definições de pinagens do Semáformo B
+     * Semáforo comum.
+     */
+    #define SEMAFOROB_VD 32
+    #define SEMAFOROB_AM 35
+    #define SEMAFOROB_VM 34
+
+    /**
+     * @brief Sefinições de pinagens do semáforo de P
+     * Semáforo de Pedestres.
+     */
+    #define SEMAFOROP_VD 39
+    #define SEMAFOROP_VM 36
+    #define PED_DETECT   15
+
+   
+
+    typedef struct
+    {
+        int id;
+        int temp_g;
+        int temp_r;
+        int temp_y;
+        int time;
+        int yellow_blink = 0;
+    } Semafore_t;
+
+    /**
+     * @brief Vetor com os gpios de cada grupo focal
+     * 
+     */
+    // uint32_t gpios_semaforoa[3] = {SEMAFOROA_VD, SEMAFOROA_AM, SEMAFOROA_VM};
+    // uint32_t gpios_semaforob[3] = {SEMAFOROB_VD, SEMAFOROB_AM, SEMAFOROB_VM};
+    // uint32_t gpios_semaforop[2] = {SEMAFOROP_VD, SEMAFOROP_VM};
+
+    #define FOCOS_NORMAL_AMOUNT 3
+    #define FOCOS_PEDESTRE_AMOUT 2
     /**
      * @brief Versão de Firmware da placa.
      * 
      */
     // char version_firmware[11];
 
-    void init_hardware(void *pvParameters);
+    /**
+     * @brief Protótipos
+     * 
+     */
+    void run_semafore_a(void *pvParameters);
+    void run_semafore_b(void *pvParameters);
+    void run_semafore_p(void *pvParameters);
     void init_all_pins(void);
+    void apaga_gfocal_a();
+    void apaga_gfocal_b();
+    void apaga_gfocal_p();
 
 #endif
