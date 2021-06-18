@@ -33,24 +33,24 @@
      * @brief Definições das pinagens do semáforo A
      * Semáforo comum.
      */
-    #define SEMAFOROA_VD 14
-    #define SEMAFOROA_AM 27
-    #define SEMAFOROA_VM 33
+    #define SEMAFOROA_VD 25
+    #define SEMAFOROA_AM 33
+    #define SEMAFOROA_VM 32
 
     /**
      * @brief Definições de pinagens do Semáformo B
      * Semáforo comum.
      */
-    #define SEMAFOROB_VD 32
-    #define SEMAFOROB_AM 35
-    #define SEMAFOROB_VM 34
+    #define SEMAFOROB_VD 14
+    #define SEMAFOROB_AM 27
+    #define SEMAFOROB_VM 26
 
     /**
      * @brief Sefinições de pinagens do semáforo de P
      * Semáforo de Pedestres.
      */
-    #define SEMAFOROP_VD 39
-    #define SEMAFOROP_VM 36
+    #define SEMAFOROP_VD 12
+    #define SEMAFOROP_VM 13
     #define PED_DETECT   15
 
    

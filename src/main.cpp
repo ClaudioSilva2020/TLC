@@ -29,6 +29,9 @@ void setup()
 {
   Serial.begin(115200); //inicia a Serial
   init_all_pins();
+  apaga_gfocal_a();
+  apaga_gfocal_b();
+  apaga_gfocal_p();
   wifi_init_tlc();
   spiffs_tlc_service();
   // attachInterrupt(digitalPinToInterrupt(ZC_DETECT), set_shine, RISING);

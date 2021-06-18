@@ -29,7 +29,7 @@
     typedef struct tlc_wifi_manager
     {
         const char* SSID = "TLC";
-        const char* PASSWRD = "87250187";
+        const char* PASSWRD = "123";
         uint8_t IP_LOCAL[5] = {192, 168, 1, 46};
         uint8_t GATEWAY [5]  = {192, 168 ,1 ,1};
         uint8_t SUBNET [5] = {255 ,255 ,0 ,0};

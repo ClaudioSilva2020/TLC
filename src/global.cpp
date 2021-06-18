@@ -74,49 +74,48 @@ void run_semafore_a(void *pvParameters)
         {
             for (;;)
             {
-                digitalWrite(SEMAFOROA_VD, 0);
-                digitalWrite(SEMAFOROA_VM, 0);
-                digitalWrite(SEMAFOROA_AM, 1);
+                // digitalWrite(SEMAFOROA_VD, 0);
+                // digitalWrite(SEMAFOROA_VM, 0);
+                digitalWrite(SEMAFOROA_AM, HIGH);
                 Serial.print("AMARELO PISCANTE A on: ");
                 Serial.println(yellow_blink);
                 vTaskDelay(1000/portTICK_PERIOD_MS);
                 
 
-                digitalWrite(SEMAFOROA_VD, 0);
-                digitalWrite(SEMAFOROA_VM, 0);
-                digitalWrite(SEMAFOROA_AM, 0);
+                // digitalWrite(SEMAFOROA_VD, 0);
+                // digitalWrite(SEMAFOROA_VM, 0);
+                digitalWrite(SEMAFOROA_AM, LOW);
                 Serial.print("AMARELO PISCANTE A off: ");
                 Serial.println(yellow_blink);
                 vTaskDelay(1000/portTICK_PERIOD_MS);
 
                 vTaskDelay(10);
-            }
-            
+            }            
         }else
         {
             for (;;)
             {
-                digitalWrite(SEMAFOROA_VD, 1);
-                digitalWrite(SEMAFOROA_VM, 0);
-                digitalWrite(SEMAFOROA_AM, 0);
+                digitalWrite(SEMAFOROA_VD, HIGH);
+                digitalWrite(SEMAFOROA_VM, LOW);
+                digitalWrite(SEMAFOROA_AM, LOW);
                 Serial.print("VERDE 1: ");
                 Serial.println(gree);
                 vTaskDelay(gree *1000/portTICK_PERIOD_MS);
                 
                 
 
-                digitalWrite(SEMAFOROA_VD, 0);
-                digitalWrite(SEMAFOROA_VM, 0);
-                digitalWrite(SEMAFOROA_AM, 1);
+                digitalWrite(SEMAFOROA_VD, LOW);
+                digitalWrite(SEMAFOROA_VM, LOW);
+                digitalWrite(SEMAFOROA_AM, HIGH);
                 Serial.print("AMARELO 1: ");
                 Serial.println(yellow);
                 vTaskDelay(yellow *1000/portTICK_PERIOD_MS);
                 
                 
 
-                digitalWrite(SEMAFOROA_VD, 0);
-                digitalWrite(SEMAFOROA_VM, 1);
-                digitalWrite(SEMAFOROA_AM, 0);
+                digitalWrite(SEMAFOROA_VD, LOW);
+                digitalWrite(SEMAFOROA_VM, HIGH);
+                digitalWrite(SEMAFOROA_AM, LOW);
                 Serial.print("VERMELHO 1: ");
                 Serial.println(red);
                 vTaskDelay(red *1000/portTICK_PERIOD_MS);
@@ -166,17 +165,17 @@ void run_semafore_b(void *pvParameters)
         {
             for (;;)
             {
-                digitalWrite(SEMAFOROB_VD, 0);
-                digitalWrite(SEMAFOROB_VM, 0);
-                digitalWrite(SEMAFOROB_AM, 1);
+                // digitalWrite(SEMAFOROB_VD, 0);
+                // digitalWrite(SEMAFOROB_VM, 0);
+                digitalWrite(SEMAFOROB_AM, HIGH);
                 Serial.print("AMARELO PISCANTE B on: ");
                 Serial.println(yellow_blink);
                 vTaskDelay(1000/portTICK_PERIOD_MS);
                 
 
-                digitalWrite(SEMAFOROB_VD, 0);
-                digitalWrite(SEMAFOROB_VM, 0);
-                digitalWrite(SEMAFOROB_AM, 0);
+                // digitalWrite(SEMAFOROB_VD, 0);
+                // digitalWrite(SEMAFOROB_VM, 0);
+                digitalWrite(SEMAFOROB_AM, LOW);
                 Serial.print("AMARELO PISCANTE B off: ");
                 Serial.println(yellow_blink);
                 vTaskDelay(1000/portTICK_PERIOD_MS);
@@ -189,25 +188,25 @@ void run_semafore_b(void *pvParameters)
         {
             for (;;)
             {
-                digitalWrite(SEMAFOROB_VD, 0);
-                digitalWrite(SEMAFOROB_VM, 1);
-                digitalWrite(SEMAFOROB_AM, 0);
+                digitalWrite(SEMAFOROB_VD, LOW);
+                digitalWrite(SEMAFOROB_VM, HIGH);
+                digitalWrite(SEMAFOROB_AM, LOW);
                 Serial.print("VERMELHO 2: ");
                 Serial.println(red);
                 vTaskDelay(red *1000/portTICK_PERIOD_MS);
                 
 
-                digitalWrite(SEMAFOROB_VD, 1);
-                digitalWrite(SEMAFOROB_VM, 0);
-                digitalWrite(SEMAFOROB_AM, 0);
+                digitalWrite(SEMAFOROB_VD, HIGH);
+                digitalWrite(SEMAFOROB_VM, LOW);
+                digitalWrite(SEMAFOROB_AM, LOW);
                 Serial.print("VERDE 2: ");
                 Serial.println(gree);
                 vTaskDelay(gree *1000/portTICK_PERIOD_MS);
                 
 
-                digitalWrite(SEMAFOROB_VD, 0);
-                digitalWrite(SEMAFOROB_VM, 0);
-                digitalWrite(SEMAFOROB_AM, 1);
+                digitalWrite(SEMAFOROB_VD, LOW);
+                digitalWrite(SEMAFOROB_VM, LOW);
+                digitalWrite(SEMAFOROB_AM, HIGH);
                 Serial.print("AMARELO 2: ");
                 Serial.println(yellow);
                 vTaskDelay(yellow *1000/portTICK_PERIOD_MS);
@@ -244,7 +243,7 @@ void run_semafore_p(void *pvParameters)
             {
                 detect_p = digitalRead(PED_DETECT);
 
-                if (detect_p == 1)
+                if (detect_p == 0)
                 {
                 Serial.println("Detectou pedestre");
                 vTaskDelay(10000/portTICK_PERIOD_MS);
@@ -255,24 +254,31 @@ void run_semafore_p(void *pvParameters)
 
                 apaga_gfocal_a();
                 apaga_gfocal_b();
-                digitalWrite(SEMAFOROP_VD, HIGH);
-                digitalWrite(SEMAFOROP_VM, HIGH);
+                apaga_gfocal_p();
+                digitalWrite(SEMAFOROB_AM, HIGH);
+                digitalWrite(SEMAFOROA_AM, HIGH);
+                vTaskDelay(3*1000/portTICK_PERIOD_MS);    
+
+                digitalWrite(SEMAFOROB_AM, LOW);
+                digitalWrite(SEMAFOROA_AM, LOW);
+                digitalWrite(SEMAFOROB_VM, HIGH);
+                digitalWrite(SEMAFOROA_VM, HIGH);
                 Serial.println("Acendeu vermelhos");
 
                 digitalWrite(SEMAFOROP_VD, HIGH);
                 digitalWrite(SEMAFOROP_VM, LOW);
-                Serial.print("VERMELHO P:");
+                Serial.print("VERDE P:");
                 Serial.println(gree);
                 vTaskDelay(gree*1000/portTICK_PERIOD_MS);
-
-                for (size_t i = 0; i < 20; i++)
+                digitalWrite(SEMAFOROP_VD, LOW);
+                for (size_t i = 0; i < 10; i++)
                 {
                     digitalWrite(SEMAFOROP_VM, HIGH);
                     Serial.println("VERMELHO PH:");
-                    vTaskDelay(500/portTICK_PERIOD_MS);
-                    digitalWrite(SEMAFOROP_VD, HIGH);
+                    vTaskDelay(250/portTICK_PERIOD_MS);
+                    digitalWrite(SEMAFOROP_VM, LOW);
                     Serial.println("VERMELHO PL:");
-                    vTaskDelay(500/portTICK_PERIOD_MS);
+                    vTaskDelay(250/portTICK_PERIOD_MS);
                 }
                 apaga_gfocal_a();
                 apaga_gfocal_b();
@@ -369,22 +375,30 @@ void spiffs_tlc_service(void)
     tlc_server.on("/get", HTTP_GET, [](AsyncWebServerRequest *request)
     {
         String am_gfocalblinka;
-        String am_gfocalblinkb;    
+        String am_gfocalblinkb;  
 
         String vd_gfocala = request->getParam("tgreen1")->value();
         String vm_gfocala = request->getParam("tred1")->value();
         String am_gfocala = request->getParam("tyellow1")->value();
-        if (request->hasParam("blinkYA"))
-        {
-        am_gfocalblinka = request->getParam("blinkYA")->value();
-        }
         
         String vd_gfocalb = request->getParam("tgreen2")->value();
         String vm_gfocalb = request->getParam("tred2")->value();
         String am_gfocalb = request->getParam("tyellow2")->value();
-        if (request->hasParam("blinkYB"))
+        if (request->hasParam("blinkYA"))
         {
-        am_gfocalblinkb = request->getParam("blinkYB")->value();
+            
+            semafores[0].yellow_blink = 1;
+        }else
+        {
+            semafores[0].yellow_blink = 0;
+        }
+
+         if (request->hasParam("blinkYB"))
+        {
+            semafores[1].yellow_blink = 1;
+        }else
+        {
+            semafores[1].yellow_blink = 0;
         }
 
         String vd_gfocalp = request->getParam("tgreen3")->value();
@@ -393,16 +407,8 @@ void spiffs_tlc_service(void)
          * @brief Se o valor de piscar o amarelo for on
          *        então passa o true para a estrutura.
          */
-        if (am_gfocalblinka == "on")
-        {
-        am_gfocalblinka = 1;
-        semafores[0].yellow_blink = am_gfocalblinka.toInt();
-        }
-        if (am_gfocalblinkb == "on")
-        {
-        am_gfocalblinkb = 1;
-        semafores[1].yellow_blink = am_gfocalblinkb.toInt();
-        }
+        
+        
         
         
     
@@ -421,7 +427,6 @@ void spiffs_tlc_service(void)
         semafores[2].temp_y = 0;
         semafores[2].id = 3;
 
-
         count ++;
         Serial.print("Iteração: ");
         Serial.println(count);
@@ -434,6 +439,7 @@ void spiffs_tlc_service(void)
         vTaskDelete(semHandleP); 
         Serial.println("Apagando TaskP");
         }
+
         
         request->send(SPIFFS, "/index.html", "text/html");
         request->send(SPIFFS, "/style.css", "text/css");
@@ -448,6 +454,8 @@ void spiffs_tlc_service(void)
         count = 1;
         Serial.println("Count = 1");
         }
+        // semafores[0].yellow_blink = 0;
+        // semafores[1].yellow_blink = 0;
     });
 
     // Inicia servidor
