@@ -20,22 +20,25 @@
 #include <stdlib.h>
 #include <cstdlib>
 #include <string>
+#include "dimmer.hpp"
+#include "tlc_wifi_manager.hpp"
+
 
 
 void setup() 
 {
+  Serial.begin(115200); //inicia a Serial
   init_all_pins();
-  
-  xTaskCreate(init_hardware,
-              "init_hardware",
-              HARDWARE_SIZE_TSK,
-              NULL,
-              5,
-              NULL);
+  apaga_gfocal_a();
+  apaga_gfocal_b();
+  apaga_gfocal_p();
+  wifi_init_tlc();
+  spiffs_tlc_service();
+  // attachInterrupt(digitalPinToInterrupt(ZC_DETECT), set_shine, RISING);
   
 }
 
 void loop() 
 {
-
+    
 }
